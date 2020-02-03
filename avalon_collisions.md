@@ -103,13 +103,15 @@ kable(n_vehicles, format = "markdown")
 |2017 | 315| 2278| 110| 11|  1|
 
 ```r
-kable(prop.table(n_vehicles, 1))
+kable(prop.table(n_vehicles, 1), format = "markdown")
 ```
 
-                1           2           3           4           5
------  ----------  ----------  ----------  ----------  ----------
-2016    0.1089572   0.8405749   0.0451203   0.0046791   0.0006684
-2017    0.1160221   0.8390424   0.0405157   0.0040516   0.0003683
+
+
+|     |         1|         2|         3|         4|         5|
+|:----|---------:|---------:|---------:|---------:|---------:|
+|2016 | 0.1089572| 0.8405749| 0.0451203| 0.0046791| 0.0006684|
+|2017 | 0.1160221| 0.8390424| 0.0405157| 0.0040516| 0.0003683|
 
 The majority of collisions in St. John's involved 2 vehicles (we are not sure if these are pedestrians yet) with some involving 1 and few involving 3-5 vehicles.
 
@@ -118,30 +120,26 @@ The majority of collisions in St. John's involved 2 vehicles (we are not sure if
 
 ```r
 n_injured <- xtabs(~ year + NumberOfInjured, data=crash_sj)
-n_injured
+kable(n_injured, format = "markdown")
 ```
 
-```
-##       NumberOfInjured
-## year      0    1    2    3    4    5    6    7
-##   2016 2229  566  153   35    5    2    1    1
-##   2017 2062  473  137   29   11    2    1    0
-```
+
+
+|     |    0|   1|   2|  3|  4|  5|  6|  7|
+|:----|----:|---:|---:|--:|--:|--:|--:|--:|
+|2016 | 2229| 566| 153| 35|  5|  2|  1|  1|
+|2017 | 2062| 473| 137| 29| 11|  2|  1|  0|
 
 ```r
-prop.table(n_injured, 1)
+kable(prop.table(n_injured, 1), format = "markdown")
 ```
 
-```
-##       NumberOfInjured
-## year              0            1            2            3            4
-##   2016 0.7449866310 0.1891711230 0.0511363636 0.0116978610 0.0016711230
-##   2017 0.7594843462 0.1742173112 0.0504604052 0.0106813996 0.0040515654
-##       NumberOfInjured
-## year              5            6            7
-##   2016 0.0006684492 0.0003342246 0.0003342246
-##   2017 0.0007366483 0.0003683241 0.0000000000
-```
+
+
+|     |         0|         1|         2|         3|         4|         5|         6|         7|
+|:----|---------:|---------:|---------:|---------:|---------:|---------:|---------:|---------:|
+|2016 | 0.7449866| 0.1891711| 0.0511364| 0.0116979| 0.0016711| 0.0006684| 0.0003342| 0.0003342|
+|2017 | 0.7594843| 0.1742173| 0.0504604| 0.0106814| 0.0040516| 0.0007366| 0.0003683| 0.0000000|
 
 In 2016 and 2017 approximately 25% of crashes involved at least one injury
 
@@ -150,26 +148,26 @@ In 2016 and 2017 approximately 25% of crashes involved at least one injury
 
 ```r
 n_killed <- xtabs(~ year + NumberOfFatalities, data=crash_sj)
-n_killed
+kable(n_killed, format = "markdown")
 ```
 
-```
-##       NumberOfFatalities
-## year      0    1
-##   2016 2989    3
-##   2017 2714    1
-```
+
+
+|     |    0|  1|
+|:----|----:|--:|
+|2016 | 2989|  3|
+|2017 | 2714|  1|
 
 ```r
-prop.table(n_killed, 1)
+kable(prop.table(n_killed, 1), format = "markdown")
 ```
 
-```
-##       NumberOfFatalities
-## year              0            1
-##   2016 0.9989973262 0.0010026738
-##   2017 0.9996316759 0.0003683241
-```
+
+
+|     |         0|         1|
+|:----|---------:|---------:|
+|2016 | 0.9989973| 0.0010027|
+|2017 | 0.9996317| 0.0003683|
 
 There were 4 total fatalities in St. John's in 2016 and 2017. 
 

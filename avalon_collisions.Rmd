@@ -18,7 +18,6 @@ library(ggmap)
 library(rgdal)
 library(sp)
 library(sf)
-
 ```
 
 # Analysis of St. John's Police Report data 2016 and 2017
@@ -243,5 +242,5 @@ points_map <- ggmap(avalon_basemap) +
 plot(points_map)
 ```
 
-There are 27 rows removed because they fall outside of the map but I wanted to show the points closer to the centre of the city. The points are transparent but will be darker as they overlap more 
+There are 27 rows removed because they fall outside of the map but I wanted to show the points closer to the centre of the city. The points are transparent but will be darker as they overlap more. 
 

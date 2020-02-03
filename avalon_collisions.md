@@ -543,5 +543,5 @@ plot(points_map)
 
 ![](avalon_collisions_files/figure-html/unnamed-chunk-20-1.png)<!-- -->
 
-There are 27 rows removed because they fall outside of the map but I wanted to show the points closer to the centre of the city. The points are transparent but will be darker as they overlap more 
+There are 27 rows removed because they fall outside of the map but I wanted to show the points closer to the centre of the city. The points are transparent but will be darker as they overlap more. 
 

@@ -92,13 +92,15 @@ In 2016 there were 2992 crashes and in 2017 there were 2715 crashes.
 
 ```r
 n_vehicles <- xtabs(~ year + NumberOfVehicles, data=crash_sj)
-kable(n_vehicles)
+kable(n_vehicles, format = "markdown")
 ```
 
-          1      2     3    4    5
------  ----  -----  ----  ---  ---
-2016    326   2515   135   14    2
-2017    315   2278   110   11    1
+
+
+|     |   1|    2|   3|  4|  5|
+|:----|---:|----:|---:|--:|--:|
+|2016 | 326| 2515| 135| 14|  2|
+|2017 | 315| 2278| 110| 11|  1|
 
 ```r
 kable(prop.table(n_vehicles, 1))

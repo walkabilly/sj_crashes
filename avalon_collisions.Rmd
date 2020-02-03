@@ -79,7 +79,7 @@ In 2016 there were 2992 crashes and in 2017 there were 2715 crashes.
 
 ```{r, warning=FALSE}
 n_vehicles <- xtabs(~ year + NumberOfVehicles, data=crash_sj)
-kable(n_vehicles)
+kable(n_vehicles, format = "markdown")
 kable(prop.table(n_vehicles, 1))
 ```
 

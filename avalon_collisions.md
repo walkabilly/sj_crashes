@@ -178,58 +178,58 @@ When we look at the type of collision we do not get much more information about 
 
 ```r
 n_config <- xtabs(~ CollisionConfiguration + year, data=crash_sj)
-n_config
+kable(n_config, format = "markdown")
 ```
 
-```
-##                                                  year
-## CollisionConfiguration                            2016 2017
-##   Approaching sideswipe                             41   39
-##   Head-on collision                                 22   17
-##   Hit moving or stationary object on road surface  284  267
-##   Hit parked motor vehicle                         886  858
-##   Left turn across opposing traffic                178  163
-##   Left turn against traffic                         97  104
-##   Left turn into traffic                            26   26
-##   One vehicle crossing path of other to the left    17   22
-##   One vehicle crossing path of other to the right   13   24
-##   Other                                            171   71
-##   Ran off road to left                              57   39
-##   Ran off road to right                             68   62
-##   Rear-end collision                               712  541
-##   Right angle collision                            179  242
-##   Right turn- including turning conflicts           29   40
-##   Rollover on roadway                               14   20
-##   Same direction sideswipe                         175  154
-##   Unknown                                           18    7
-```
+
+
+|                                                | 2016| 2017|
+|:-----------------------------------------------|----:|----:|
+|Approaching sideswipe                           |   41|   39|
+|Head-on collision                               |   22|   17|
+|Hit moving or stationary object on road surface |  284|  267|
+|Hit parked motor vehicle                        |  886|  858|
+|Left turn across opposing traffic               |  178|  163|
+|Left turn against traffic                       |   97|  104|
+|Left turn into traffic                          |   26|   26|
+|One vehicle crossing path of other to the left  |   17|   22|
+|One vehicle crossing path of other to the right |   13|   24|
+|Other                                           |  171|   71|
+|Ran off road to left                            |   57|   39|
+|Ran off road to right                           |   68|   62|
+|Rear-end collision                              |  712|  541|
+|Right angle collision                           |  179|  242|
+|Right turn- including turning conflicts         |   29|   40|
+|Rollover on roadway                             |   14|   20|
+|Same direction sideswipe                        |  175|  154|
+|Unknown                                         |   18|    7|
 
 ```r
-prop.table(n_config, 2)
+kable(prop.table(n_config, 2), format = "markdown")
 ```
 
-```
-##                                                  year
-## CollisionConfiguration                                   2016        2017
-##   Approaching sideswipe                           0.013726147 0.014465875
-##   Head-on collision                               0.007365249 0.006305638
-##   Hit moving or stationary object on road surface 0.095078674 0.099035608
-##   Hit parked motor vehicle                        0.296618681 0.318249258
-##   Left turn across opposing traffic               0.059591563 0.060459941
-##   Left turn against traffic                       0.032474054 0.038575668
-##   Left turn into traffic                          0.008704386 0.009643917
-##   One vehicle crossing path of other to the left  0.005691329 0.008160237
-##   One vehicle crossing path of other to the right 0.004352193 0.008902077
-##   Other                                           0.057248075 0.026335312
-##   Ran off road to left                            0.019082692 0.014465875
-##   Ran off road to right                           0.022765316 0.022997033
-##   Rear-end collision                              0.238366254 0.200667656
-##   Right angle collision                           0.059926348 0.089762611
-##   Right turn- including turning conflicts         0.009708738 0.014836795
-##   Rollover on roadway                             0.004686977 0.007418398
-##   Same direction sideswipe                        0.058587211 0.057121662
-##   Unknown                                         0.006026113 0.002596439
-```
+
+
+|                                                |      2016|      2017|
+|:-----------------------------------------------|---------:|---------:|
+|Approaching sideswipe                           | 0.0137261| 0.0144659|
+|Head-on collision                               | 0.0073652| 0.0063056|
+|Hit moving or stationary object on road surface | 0.0950787| 0.0990356|
+|Hit parked motor vehicle                        | 0.2966187| 0.3182493|
+|Left turn across opposing traffic               | 0.0595916| 0.0604599|
+|Left turn against traffic                       | 0.0324741| 0.0385757|
+|Left turn into traffic                          | 0.0087044| 0.0096439|
+|One vehicle crossing path of other to the left  | 0.0056913| 0.0081602|
+|One vehicle crossing path of other to the right | 0.0043522| 0.0089021|
+|Other                                           | 0.0572481| 0.0263353|
+|Ran off road to left                            | 0.0190827| 0.0144659|
+|Ran off road to right                           | 0.0227653| 0.0229970|
+|Rear-end collision                              | 0.2383663| 0.2006677|
+|Right angle collision                           | 0.0599263| 0.0897626|
+|Right turn- including turning conflicts         | 0.0097087| 0.0148368|
+|Rollover on roadway                             | 0.0046870| 0.0074184|
+|Same direction sideswipe                        | 0.0585872| 0.0571217|
+|Unknown                                         | 0.0060261| 0.0025964|
 
 There is a collision type labelled `Hit moving or stationary object on road surface`. A pedestrian could be labelled as a  moving or stationary object but again we have no way to know. Approximately 10% of the collisions are of type `Hit moving or stationary object on road surface`. 
 
@@ -241,29 +241,29 @@ The column `Trailer1Type` includes N/A or Pedestrian for 13169 observations. Pro
 
 
 ```r
-kable(table(crashes$Trailer1Type))
+kable(table(crashes$Trailer1Type), format = "markdown")
 ```
 
 
 
-Var1                     Freq
----------------------  ------
-Boat/Utility Trailer       42
-Full Trailer               34
-N/A or Pedestrian       13169
-Other Trailer               4
-Pole Trailer                8
-Recreational Trailer       52
-Single Semi-Trailer        76
-Three Semi-Trailers         1
-Two Semi-Trailers           2
-Unknown                    93
+|Var1                 |  Freq|
+|:--------------------|-----:|
+|Boat/Utility Trailer |    42|
+|Full Trailer         |    34|
+|N/A or Pedestrian    | 13169|
+|Other Trailer        |     4|
+|Pole Trailer         |     8|
+|Recreational Trailer |    52|
+|Single Semi-Trailer  |    76|
+|Three Semi-Trailers  |     1|
+|Two Semi-Trailers    |     2|
+|Unknown              |    93|
 
 There are columns called `PersonSequenceNo-1` and `PedestrianNo-1` and the same thing with 2 through 4. We could assume that these would have information about the sequence of events and if a pedestrian was involved. Unfortunately, every `PedestrianNo-1` column from 1-4 is completely blank. 
 
 
 ```r
-kable(table(crashes$`PedestrianNo-1`))
+kable(table(crashes$`PedestrianNo-1`), format = "markdown")
 ```
 
 
@@ -272,7 +272,7 @@ kable(table(crashes$`PedestrianNo-1`))
 |----:|
 
 ```r
-kable(table(crashes$`PedestrianNo-2`))
+kable(table(crashes$`PedestrianNo-2`), format = "markdown")
 ```
 
 
@@ -281,7 +281,7 @@ kable(table(crashes$`PedestrianNo-2`))
 |----:|
 
 ```r
-kable(table(crashes$`PedestrianNo-3`))
+kable(table(crashes$`PedestrianNo-3`), format = "markdown")
 ```
 
 
@@ -290,7 +290,7 @@ kable(table(crashes$`PedestrianNo-3`))
 |----:|
 
 ```r
-kable(table(crashes$`PedestrianNo-4`))
+kable(table(crashes$`PedestrianNo-4`), format = "markdown")
 ```
 
 
@@ -304,68 +304,68 @@ There are also columns called `Pedestrian1SequenceNo` and `Pedestrian1Action`.
 
 
 ```r
-kable(table(crashes$Pedestrian1SequenceNo))
+kable(table(crashes$Pedestrian1SequenceNo), format = "markdown")
 ```
 
 
 
-Var1    Freq
------  -----
-TRUE       3
+|Var1 | Freq|
+|:----|----:|
+|TRUE |    3|
 
 ```r
-kable(table(crashes$Pedestrian2SequenceNo))
+kable(table(crashes$Pedestrian2SequenceNo), format = "markdown")
 ```
 
 
 
-Var1     Freq
-------  -----
-FALSE       1
+|Var1  | Freq|
+|:-----|----:|
+|FALSE |    1|
 
 The `Pedestrian1Action` and `Pedestrian2Action` columns appear to be more informative. These look like they define any that a pedestrian was going when the collision occured. 
 
 
 ```r
-kable(table(crashes$Pedestrian1Action))
+kable(table(crashes$Pedestrian1Action), format = "markdown")
 ```
 
 
 
-Var1                                  Freq
------------------------------------  -----
-Approaching/Exitting Other Vehicle      34
-Approaching/Exitting School Bus          1
-Entering or Crossing Road              203
-N/A                                   2310
-Other than above                        13
-Playing                                  5
-Riding (Wheelchair/Scooter)              3
-Standing                                37
-Unknown                                 22
-Walking or Running                     148
-Walking to/from School                  10
-Working                                  8
+|Var1                               | Freq|
+|:----------------------------------|----:|
+|Approaching/Exitting Other Vehicle |   34|
+|Approaching/Exitting School Bus    |    1|
+|Entering or Crossing Road          |  203|
+|N/A                                | 2310|
+|Other than above                   |   13|
+|Playing                            |    5|
+|Riding (Wheelchair/Scooter)        |    3|
+|Standing                           |   37|
+|Unknown                            |   22|
+|Walking or Running                 |  148|
+|Walking to/from School             |   10|
+|Working                            |    8|
 
 ```r
-kable(table(crashes$Pedestrian2Action))
+kable(table(crashes$Pedestrian2Action), format = "markdown")
 ```
 
 
 
-Var1                                  Freq
------------------------------------  -----
-Approaching/Exitting Other Vehicle       8
-Entering or Crossing Road               36
-N/A                                   2356
-Other than above                         3
-Playing                                  1
-Riding (Wheelchair/Scooter)              1
-Standing                                 9
-Unknown                                 16
-Walking or Running                      30
-Walking to/from School                   5
-Working                                  2
+|Var1                               | Freq|
+|:----------------------------------|----:|
+|Approaching/Exitting Other Vehicle |    8|
+|Entering or Crossing Road          |   36|
+|N/A                                | 2356|
+|Other than above                   |    3|
+|Playing                            |    1|
+|Riding (Wheelchair/Scooter)        |    1|
+|Standing                           |    9|
+|Unknown                            |   16|
+|Walking or Running                 |   30|
+|Walking to/from School             |    5|
+|Working                            |    2|
 
 I'm going to recode the Pedestrian1Action variable and use that to define crashed involving a pedestrian. I'm also going to subset the data again to include only crashes with more than 1 vehicle.
 
@@ -403,74 +403,76 @@ crash_sj <- subset(crash_sj, NumberOfVehicles >= 1)
 
 
 ```r
-kable(table(crash_sj$year, crash_sj$pedestrian))
+kable(table(crash_sj$year, crash_sj$pedestrian), format = "markdown")
 ```
 
-        non pedestrian   pedestrian
------  ---------------  -----------
-2016              2893           99
-2017              2613          102
+
+
+|     | non pedestrian| pedestrian|
+|:----|--------------:|----------:|
+|2016 |           2893|         99|
+|2017 |           2613|        102|
 
 ### Number of vehicle and pedestrian crashes per year and month
 
 
 ```r
 n_crash <- xtabs(~ month + pedestrian + year, data=crash_sj)
-kable(n_crash)
+kable(n_crash, format = "markdown")
 ```
 
 
 
-month   pedestrian       year    Freq
-------  ---------------  -----  -----
-1       non pedestrian   2016     274
-2       non pedestrian   2016     279
-3       non pedestrian   2016     264
-4       non pedestrian   2016     230
-5       non pedestrian   2016     210
-6       non pedestrian   2016     230
-7       non pedestrian   2016     221
-8       non pedestrian   2016     179
-9       non pedestrian   2016     264
-10      non pedestrian   2016     218
-11      non pedestrian   2016     231
-12      non pedestrian   2016     293
-1       pedestrian       2016       7
-2       pedestrian       2016       7
-3       pedestrian       2016       7
-4       pedestrian       2016       4
-5       pedestrian       2016       7
-6       pedestrian       2016       6
-7       pedestrian       2016      12
-8       pedestrian       2016       3
-9       pedestrian       2016       9
-10      pedestrian       2016      10
-11      pedestrian       2016      18
-12      pedestrian       2016       9
-1       non pedestrian   2017     235
-2       non pedestrian   2017     264
-3       non pedestrian   2017     256
-4       non pedestrian   2017     212
-5       non pedestrian   2017     193
-6       non pedestrian   2017     218
-7       non pedestrian   2017     172
-8       non pedestrian   2017     180
-9       non pedestrian   2017     204
-10      non pedestrian   2017     207
-11      non pedestrian   2017     222
-12      non pedestrian   2017     250
-1       pedestrian       2017       5
-2       pedestrian       2017       7
-3       pedestrian       2017       5
-4       pedestrian       2017       4
-5       pedestrian       2017       4
-6       pedestrian       2017      13
-7       pedestrian       2017       2
-8       pedestrian       2017       5
-9       pedestrian       2017      13
-10      pedestrian       2017      13
-11      pedestrian       2017      13
-12      pedestrian       2017      18
+|month |pedestrian     |year | Freq|
+|:-----|:--------------|:----|----:|
+|1     |non pedestrian |2016 |  274|
+|2     |non pedestrian |2016 |  279|
+|3     |non pedestrian |2016 |  264|
+|4     |non pedestrian |2016 |  230|
+|5     |non pedestrian |2016 |  210|
+|6     |non pedestrian |2016 |  230|
+|7     |non pedestrian |2016 |  221|
+|8     |non pedestrian |2016 |  179|
+|9     |non pedestrian |2016 |  264|
+|10    |non pedestrian |2016 |  218|
+|11    |non pedestrian |2016 |  231|
+|12    |non pedestrian |2016 |  293|
+|1     |pedestrian     |2016 |    7|
+|2     |pedestrian     |2016 |    7|
+|3     |pedestrian     |2016 |    7|
+|4     |pedestrian     |2016 |    4|
+|5     |pedestrian     |2016 |    7|
+|6     |pedestrian     |2016 |    6|
+|7     |pedestrian     |2016 |   12|
+|8     |pedestrian     |2016 |    3|
+|9     |pedestrian     |2016 |    9|
+|10    |pedestrian     |2016 |   10|
+|11    |pedestrian     |2016 |   18|
+|12    |pedestrian     |2016 |    9|
+|1     |non pedestrian |2017 |  235|
+|2     |non pedestrian |2017 |  264|
+|3     |non pedestrian |2017 |  256|
+|4     |non pedestrian |2017 |  212|
+|5     |non pedestrian |2017 |  193|
+|6     |non pedestrian |2017 |  218|
+|7     |non pedestrian |2017 |  172|
+|8     |non pedestrian |2017 |  180|
+|9     |non pedestrian |2017 |  204|
+|10    |non pedestrian |2017 |  207|
+|11    |non pedestrian |2017 |  222|
+|12    |non pedestrian |2017 |  250|
+|1     |pedestrian     |2017 |    5|
+|2     |pedestrian     |2017 |    7|
+|3     |pedestrian     |2017 |    5|
+|4     |pedestrian     |2017 |    4|
+|5     |pedestrian     |2017 |    4|
+|6     |pedestrian     |2017 |   13|
+|7     |pedestrian     |2017 |    2|
+|8     |pedestrian     |2017 |    5|
+|9     |pedestrian     |2017 |   13|
+|10    |pedestrian     |2017 |   13|
+|11    |pedestrian     |2017 |   13|
+|12    |pedestrian     |2017 |   18|
 
 ### Figure 1. Number of crashes (pedestrian and non pedestrian) by month and year
 

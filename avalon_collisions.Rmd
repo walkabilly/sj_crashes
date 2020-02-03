@@ -111,8 +111,8 @@ When we look at the type of collision we do not get much more information about 
 
 ```{r, warning=FALSE}
 n_config <- xtabs(~ CollisionConfiguration + year, data=crash_sj)
-n_config
-prop.table(n_config, 2)
+kable(n_config, format = "markdown")
+kable(prop.table(n_config, 1), format = "markdown")
 ```
 
 There is a collision type labelled `Hit moving or stationary object on road surface`. A pedestrian could be labelled as a  moving or stationary object but again we have no way to know. Approximately 10% of the collisions are of type `Hit moving or stationary object on road surface`. 
@@ -124,16 +124,16 @@ This part is tricky. There are a number of columns that including information ab
 The column `Trailer1Type` includes N/A or Pedestrian for 13169 observations. Probably safe to assume that these are NA since there are a lot of cases. But there are also 93 observations labelled `Unkown`. 
 
 ```{r, warning=FALSE}
-kable(table(crashes$Trailer1Type))
+kable(table(crashes$Trailer1Type), format = "markdown")
 ```
 
 There are columns called `PersonSequenceNo-1` and `PedestrianNo-1` and the same thing with 2 through 4. We could assume that these would have information about the sequence of events and if a pedestrian was involved. Unfortunately, every `PedestrianNo-1` column from 1-4 is completely blank. 
 
 ```{r, warning=FALSE}
-kable(table(crashes$`PedestrianNo-1`))
-kable(table(crashes$`PedestrianNo-2`))
-kable(table(crashes$`PedestrianNo-3`))
-kable(table(crashes$`PedestrianNo-4`))
+kable(table(crashes$`PedestrianNo-1`), format = "markdown")
+kable(table(crashes$`PedestrianNo-2`), format = "markdown")
+kable(table(crashes$`PedestrianNo-3`), format = "markdown")
+kable(table(crashes$`PedestrianNo-4`), format = "markdown")
 ```
 
 There are also columns called `Pedestrian1SequenceNo` and `Pedestrian1Action`. 
@@ -141,15 +141,15 @@ There are also columns called `Pedestrian1SequenceNo` and `Pedestrian1Action`.
 `Pedestrian1SequenceNo` are mostly empty except in a few cases. 
 
 ```{r, warning=FALSE}
-kable(table(crashes$Pedestrian1SequenceNo))
-kable(table(crashes$Pedestrian2SequenceNo))
+kable(table(crashes$Pedestrian1SequenceNo), format = "markdown")
+kable(table(crashes$Pedestrian2SequenceNo), format = "markdown")
 ```
 
 The `Pedestrian1Action` and `Pedestrian2Action` columns appear to be more informative. These look like they define any that a pedestrian was going when the collision occured. 
 
 ```{r, warning=FALSE}
-kable(table(crashes$Pedestrian1Action))
-kable(table(crashes$Pedestrian2Action))
+kable(table(crashes$Pedestrian1Action), format = "markdown")
+kable(table(crashes$Pedestrian2Action), format = "markdown")
 ```
 
 I'm going to recode the Pedestrian1Action variable and use that to define crashed involving a pedestrian. I'm also going to subset the data again to include only crashes with more than 1 vehicle.
@@ -185,14 +185,14 @@ crash_sj <- subset(crash_sj, NumberOfVehicles >= 1)
 ### Number of vehicle and pedestrian crashes per year
 
 ```{r, warning=FALSE}
-kable(table(crash_sj$year, crash_sj$pedestrian))
+kable(table(crash_sj$year, crash_sj$pedestrian), format = "markdown")
 ```
 
 ### Number of vehicle and pedestrian crashes per year and month
 
 ```{r, warning=FALSE}
 n_crash <- xtabs(~ month + pedestrian + year, data=crash_sj)
-kable(n_crash)
+kable(n_crash, format = "markdown")
 ```
 
 ### Figure 1. Number of crashes (pedestrian and non pedestrian) by month and year

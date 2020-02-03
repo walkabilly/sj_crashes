@@ -112,7 +112,7 @@ When we look at the type of collision we do not get much more information about 
 ```{r, warning=FALSE}
 n_config <- xtabs(~ CollisionConfiguration + year, data=crash_sj)
 kable(n_config, format = "markdown")
-kable(prop.table(n_config, 1), format = "markdown")
+kable(prop.table(n_config, 2), format = "markdown")
 ```
 
 There is a collision type labelled `Hit moving or stationary object on road surface`. A pedestrian could be labelled as a  moving or stationary object but again we have no way to know. Approximately 10% of the collisions are of type `Hit moving or stationary object on road surface`. 
